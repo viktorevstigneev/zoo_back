@@ -15,7 +15,7 @@ const app = express();
 
 app.use(
 	cors({
-		origin: 'http://localhost:3000',
+		origin: 'https://zooexpress.onrender.com',
 		preflightContinue: true,
 		optionsSuccessStatus: 200,
 		credentials: true,
@@ -29,10 +29,9 @@ app.use(express.raw());
 app.use('/getImage', express.static(path.join(__dirname, 'uploads')));
 app.use('/getAudio', express.static(path.join(__dirname, 'sounds')));
 
-app.get('/', (req, res)=>{
-	res.send("hellooo");
-})
-
+app.get('/', (req, res) => {
+	res.send('hellooo');
+});
 
 // auth
 
